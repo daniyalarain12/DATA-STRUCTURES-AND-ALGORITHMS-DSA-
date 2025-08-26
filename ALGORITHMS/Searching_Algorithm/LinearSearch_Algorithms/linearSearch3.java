@@ -1,20 +1,26 @@
 public class linearSearch3 {
-    public static int thirdTargetIndex(String[] arr,String target,int times) {
+    public static int[] linearSearch(String[] arr,String target) {
+        int[] dummy = new int[arr.length];
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i]==target) {
+            if (arr[i].toLowerCase().contains(target)) {
+                dummy[count] = i;
                 count++;
             }
-            if (count==times) {
-                return i;
-            }
         }
-        return -1;
+        int[] record = new int[count];
+        for (int i = 0; i < count; i++) {
+            record[i] = dummy[i];
+        }
+        return record;
     }
     public static void main(String[] args) {
-        String[] arr = {"DANIYAL","UMAIR","UMAIR","MOHAMMAD ALI","UMAIR","SIR NAVEEN KUMAR","UMAIR"};
-        String target = "UMAIR";
-        int times = 3;
-        System.out.println("THIRD TIME TARGET EXIST AT INDEX : " + thirdTargetIndex(arr,target,times));
+        String[] arr = {"DANIYAL","UMAIR","ali RAZA","MOHAMMAD ALI","SIR NAVEEN KUMAR"};
+        String target = "ali";
+        int[] arr2 = linearSearch(arr,target);
+        System.out.print("TARGET IS PRESENT AT INDICES : ");
+        for (int i : arr2) {
+            System.out.print(i + " ");
+        }
     }
 }
