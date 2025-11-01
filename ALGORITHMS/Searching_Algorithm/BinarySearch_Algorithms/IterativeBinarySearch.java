@@ -1,5 +1,5 @@
 // Binary Search Using Iterations
-public class binarySearch1 {
+public class IterativeBinarySearch {
     public static int binarySearch(int[] arr,int target) {
         int start = 0 , end = arr.length-1;
         while (start<=end) {
