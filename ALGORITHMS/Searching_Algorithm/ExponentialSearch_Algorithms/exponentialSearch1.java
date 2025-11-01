@@ -1,6 +1,5 @@
 public class exponentialSearch1 {
-    public static int binarySearch(int[] arr,int target,int s,int e) {
-        int start = s, end = e;
+    public static int binarySearch(int[] arr,int target,int start,int end) {
         while (start<=end) {
             int mid = (start+end)/2;
             if (arr[mid]==target) {
@@ -21,7 +20,7 @@ public class exponentialSearch1 {
         while ( (i<arr.length) && arr[i]<target) {
             i*=2;
         }
-        return binarySearch(arr,target,i/2,Math.min(arr.length-1,i));
+        return binarySearch(arr,target,i/2,Math.min(i,arr.length-1));
     }
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
