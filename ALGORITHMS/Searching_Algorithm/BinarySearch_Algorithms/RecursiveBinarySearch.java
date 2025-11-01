@@ -1,5 +1,5 @@
 // Binary Search Using Recursion
-public class binarySearch2 {
+public class RecursiveBinarySearch {
     public static int binarySearch(int[] arr,int target,int start,int end) {
         if (start<=end) {
             //int mid = (start+end)/2;
