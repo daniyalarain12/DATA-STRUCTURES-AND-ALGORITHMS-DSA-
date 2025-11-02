@@ -1,5 +1,5 @@
 /*RE-SIZING AN ARRAY*/
-public class DSA_Arrays {
+public class ArrayResizing {
     public static int[] resize(int[] arr1,int n) {
         if (n<arr1.length) throw new IllegalStateException();
         int[] arr2 = new int[n];
