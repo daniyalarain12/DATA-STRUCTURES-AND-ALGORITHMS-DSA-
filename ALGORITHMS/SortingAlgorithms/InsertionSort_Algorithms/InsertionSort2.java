@@ -1,13 +1,13 @@
-public class insertionSort2 {
-    public static void insertionSort(String[] arr) {
+public class LAB_5 {
+    public static void InsertionSort2(String[] arr) {
         for (int i = 1; i < arr.length; i++) {
-            String  key = arr[i];
-            int j = i-1;
-            while ( (j>=0) && (arr[j].compareTo(key)>0) ) {
-                arr[j+1] = arr[j];
-                j--;
+            String current = arr[i];
+            int prev = i-1;
+            while (prev>=0 && arr[prev].compareTo(current)>0) {
+                arr[prev+1] = arr[prev];
+                prev--;
             }
-            arr[j+1] = key;
+            arr[prev+1] = current;
         }
     }
     public static void display(String [] arr) {
