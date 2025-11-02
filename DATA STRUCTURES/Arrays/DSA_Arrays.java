@@ -1,9 +1,7 @@
 /*RE-SIZING AN ARRAY*/
 public class DSA_Arrays {
     public static int[] resize(int[] arr1,int n) {
-        if (n<arr1.length) {
-        throw new IllegalStateException();
-        }
+        if (n<arr1.length) throw new IllegalStateException();
         int[] arr2 = new int[n];
         System.arraycopy(arr1,0,arr2,0,arr1.length);
         return arr2;
