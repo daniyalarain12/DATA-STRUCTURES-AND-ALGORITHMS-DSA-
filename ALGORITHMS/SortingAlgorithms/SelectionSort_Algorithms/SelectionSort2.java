@@ -1,9 +1,9 @@
-public class selectionSort2 {
+public class SelectionSort2 {
     public static void selectionSort(String[] arr) {
         for (int i = 0; i < arr.length-1; i++) {
             int smallestIndex = i;
             for (int j = i+1; j < arr.length; j++) {
-                if ( ( arr[j].compareTo(arr[smallestIndex]) ) <0) {
+                if ( (arr[j].compareTo(arr[smallestIndex])) < 0) {
                     smallestIndex = j;
                 }
             }
