@@ -1,4 +1,4 @@
-public class selectionSort1 {
+public class SelectionSort1 {
     public static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length-1; i++) {
             int smallestIndex = i;
