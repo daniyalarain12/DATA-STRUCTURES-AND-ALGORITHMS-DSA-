@@ -2,47 +2,50 @@
  THEN ADD THOSE 100 ELEMENTS IN THAT ARRAY. CREATE ANOTHER ARRAY THAT CONTAINS ELEMENTS
  OF 1ST ARRAY IN REVERSE ORDER. FIND SMALLEST AND LARGEST ELEMENTS FROM 2ND ARRAY*/
 import java.util.Random;
-
 public class DSA_Arrays_Problem_1 {
-    public static void main(String[] args) {
-        Random sc = new Random();
-        int size = 100;
-        int[] arr1 = new int[size], arr2 = new int[size];
-        for (int i = 0; i < size; i++) {
-            arr1[i] = sc.nextInt(100);
-        }
-        for (int i = 0; i < size; i++) {
-            arr2[i] = arr1[i];
-        }
-        int start = 0, end = size-1, temp;
+    public static void reverse(int[] arr) {
+        int start = 0, end = arr.length-1;
+        int temp;
         while (start<=end) {
-            temp = arr2[start];
-            arr2[start] = arr2[end];
-            arr2[end] = temp;
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
             start++;
             end--;
         }
-        System.out.print("ORIGINAL ARRAY : ");
-        for (int i : arr1) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        System.out.print("REVERSE ARRAY : ");
-        for (int i : arr2) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-
+    }
+    public static void smallestLargest(int[] arr) {
         int smallest = Integer.MAX_VALUE, largest = Integer.MIN_VALUE;
-        for (int i  : arr2) {
-            if (i<smallest) {
-                smallest = i;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]<smallest) {
+                smallest = arr[i];
             }
-            if (i>largest) {
-                largest = i;
+            if (arr[i]>largest) {
+                largest = arr[i];
             }
         }
-        System.out.println("SMALLEST : " + smallest);
-        System.out.println("LARGEST : " + largest);
-  }
+        System.out.println("SMALLEST ELEMENT : " + smallest);
+        System.out.println("LARGEST ELEMENT : " + largest);
+    }
+    public static void display(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Random sc = new Random();
+        int size = 40;
+        int[] arr = new int[size], arr2 = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt(20);
+        }
+        System.arraycopy(arr,0,arr2,0,size);
+        System.out.print("ORIGINAL ARRAY : ");
+        display(arr2);
+        reverse(arr2);
+        System.out.print("REVERSE ARRAY : ");
+        display(arr2);
+        smallestLargest(arr2);
+    }
 }
