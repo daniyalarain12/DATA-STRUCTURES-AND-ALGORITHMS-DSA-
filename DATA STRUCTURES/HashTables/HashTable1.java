@@ -142,8 +142,5 @@ public class HashTable1 {
         System.out.println("SIZE OF HASH TABLE : " + hashTable.size());
         hashTable.display();
 
-        System.out.println("REMOVED VALUE : " + hashTable.remove("IT"));
-        System.out.println("SIZE OF HASH TABLE : " + hashTable.size());
-        hashTable.display();
     }
 }
